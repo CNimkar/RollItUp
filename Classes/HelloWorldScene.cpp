@@ -71,6 +71,7 @@ bool HelloWorld::init()
     _ball->Reset();
     this->addChild(_ball,rZIndexBall);
     _ball->SetSpeedAndWidth(rBallStartSpeedX, visibleSize.width);
+    _ball->State = rBallStateStopped;
     //       _ball->retain();
     global_ball = _ball;
 
@@ -202,7 +203,7 @@ bool HelloWorld::init()
         auto acclerometer_listener = EventListenerAcceleration::create(CC_CALLBACK_2(HelloWorld::onAcceleration,this));
         _eventDispatcher->addEventListenerWithSceneGraphPriority(acclerometer_listener,this);
 
-        _ball->State = rBallStateMoving;
+
         CocosDenshion::SimpleAudioEngine::getInstance()->playBackgroundMusic("roll_bg.mp3",true);
 
         HelloWorld::_startLabel = AddLabel(LabelFontSize, "Tap The Screen To Start", Vec2(0.5 , 0.5),
@@ -390,7 +391,6 @@ if(HelloWorld::game_over_flag == false)
 												CocosDenshion::SimpleAudioEngine::getInstance()->playEffect("kaboom.wav");
 												m_pSprite1->runAction( Animate::create(animation) );
 												_ball->setVisible(false);
-												HelloWorld::_startLabel->setVisible(true);
 
 									}
 
@@ -398,6 +398,7 @@ if(HelloWorld::game_over_flag == false)
 		}
 		else
 		{
+			HelloWorld::_startLabel->setVisible(true);
 			_ball->Stop();
 		}
 
