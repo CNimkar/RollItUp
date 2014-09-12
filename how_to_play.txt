@@ -1,0 +1,22 @@
+RollItUp is a single player game as of now. In this game, player is supposed to avoid obstacles(bricks) that spawn in certain pattern, as the ball scrolls thorough the screen from left to right. 
+
+Every time player manages to survive, i.e ball reaches end of screen, two things happen:
+1] he/she earns 10 points. 
+2] ball's speed increases making the next survival harder.
+
+User controls:
+
+The screen is divided into left half and right half.
+
+If you touch on the left side of the screen, the ball shifts up by one lane.
+If you touch on the right side of the screen, the ball shifts down by one lane.
+
+If you shift up when at the top most lane, the ball shifts to downmost lane directly.
+If you shift down when at the downmost lane, the ball shifts to uppermost lane directly.
+
+
+You get three lives before the 'game over'. A life ends when a ball collides with the brick, and blasts.
+Left top of the screen shows palyer's current score in the running game.
+Below the current score, a player can see Best score.
+
+If you beat the best score, you make new record.
